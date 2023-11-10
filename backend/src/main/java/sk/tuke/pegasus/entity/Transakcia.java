@@ -27,8 +27,9 @@ public class Transakcia implements Serializable{
     private BigDecimal suma;
     private String typTransakcie;
     private String popis;
-    private char Financny_Tok;
-    private String stavTransakcie;
+    private  double stavPred ;
+    private  double stavPo ;
+    private char financnyTok;
 
     @ManyToOne
     @JoinColumn(name = "terminalId")
