@@ -27,6 +27,7 @@ public class Transakcia implements Serializable{
     private BigDecimal suma;
     private String typTransakcie;
     private String popis;
+    private char Financny_Tok;
     private String stavTransakcie;
 
     @ManyToOne
