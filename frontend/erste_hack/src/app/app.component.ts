@@ -16,13 +16,11 @@ export class AppComponent implements OnInit{
   constructor(private store: Store<fromState.State>) {
   }
 
-  helloState$  = new Observable<string>()
+  helloState$  = new Observable<string>();
 
   ngOnInit(): void {
-    this.store.dispatch(AppActions.appAction());
+    this.store.dispatch(AppActions.AppAction());
+    this.store.dispatch(AppActions.GetCurrentDateStart());
     this.helloState$ = this.store.select(AppSelectors.selectAppHello)
   }
-
-  title = 'erste_hack';
-
 }
