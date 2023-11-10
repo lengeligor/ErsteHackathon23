@@ -1,15 +1,22 @@
-import {createFeatureSelector, createReducer, createSelector} from "@ngrx/store";
+import {createFeatureSelector, createReducer, createSelector, on} from "@ngrx/store";
 import {State} from "./index";
 import {state} from "@angular/animations";
+import {AppActions} from "../actions";
 
 export const appFeatureKey = 'app';
 
 export interface AppState {
-  helloApp: string
+  helloApp: string,
+  currentTime: string,
+  currentTimeError: string | null,
+  currentTimeLoading: boolean,
 }
 
 export const initState: AppState = {
-  helloApp: 'hi'
+  helloApp: 'hi',
+  currentTime: '',
+  currentTimeError: null,
+  currentTimeLoading: false
 }
 
 //selectors
@@ -24,5 +31,26 @@ export const selectAppHello = createSelector(
 )
 
 export const AppReducer = createReducer(
-  initState
+  initState,
+  on(AppActions.GetCurrentDateStart, (state) => {
+    return {
+      ...state,
+      currentTimeLoading: true,
+    };
+  }),
+  on(AppActions.GetCurrentDateSuccess, (state, {payload}) => {
+    return {
+      ...state,
+      currentTimeLoading: false,
+      currentTime: payload.currentTime
+    };
+  }),
+  on(AppActions.GetCurrentDateError, (state, {error}) => {
+    console.log(error)
+    return {
+      ...state,
+      currentTimeLoading: false,
+      currentTimeError: error
+    };
+  }),
 )
