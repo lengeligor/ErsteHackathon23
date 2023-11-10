@@ -1,0 +1,26 @@
+.header {
+  background-color: #bde5fa; /* Adjust the color to match the banner background */
+  color: #02446c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 6%; /* Adjust the padding to match the spacing in the banner */
+}
+
+.first {
+  display: flex;
+
+  .george{
+    margin-right: 20px;
+  }
+}
+
+.welcome-message {
+  font-size: 16px; /* Adjust the size as needed */
+}
+
+.logo {
+  background-size: cover;
+  width: auto; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+}
