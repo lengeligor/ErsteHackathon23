@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
+import sk.tuke.pegasus.dto.DummyDto;
 
 @RestController
 @CrossOrigin
@@ -18,9 +19,11 @@ import lombok.extern.slf4j.Slf4j;
 public class DummyController {
 
     @GetMapping()
-    public ResponseEntity<String> ping() {
-        log.info("/ping {}", LocalDate.now());
-        return ResponseEntity.ok(String.format("/ping %s", LocalDate.now()));
+    public ResponseEntity<DummyDto> ping() {
+        log.info("Prevolanie sluzby /ping {}", LocalDate.now());
+        DummyDto dto = new DummyDto();
+        dto.setDummyString(String.format("Prevolanie sluzby /ping %s", LocalDate.now()));
+        return ResponseEntity.ok(dto);
     }
 
 }
