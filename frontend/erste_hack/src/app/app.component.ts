@@ -5,6 +5,7 @@ import {Observable, observable} from "rxjs";
 
 import * as AppSelectors from './store/reducers/app.reducer'
 import * as fromState from './store/reducers'
+import * as Highcharts from 'highcharts'
 
 @Component({
   selector: 'app-root',

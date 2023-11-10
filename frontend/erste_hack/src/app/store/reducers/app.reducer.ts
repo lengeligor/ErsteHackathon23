@@ -39,10 +39,11 @@ export const AppReducer = createReducer(
     };
   }),
   on(AppActions.GetCurrentDateSuccess, (state, {payload}) => {
+    console.log(payload)
     return {
       ...state,
       currentTimeLoading: false,
-      currentTime: payload.currentTime
+      currentTime: payload.dummyString
     };
   }),
   on(AppActions.GetCurrentDateError, (state, {error}) => {
