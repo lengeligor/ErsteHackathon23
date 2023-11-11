@@ -6,5 +6,6 @@ import lombok.Data;
 public class GraphResponseDto {
 
     public String mesiac;
-    public Long stavUctu;
+    public double stavUctu;
+
 }

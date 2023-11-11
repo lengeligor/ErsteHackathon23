@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
+import sk.tuke.pegasus.dto.AllGraphResponseDto;
 import sk.tuke.pegasus.dto.DummyDto;
 import sk.tuke.pegasus.dto.GraphFilterDto;
 import sk.tuke.pegasus.dto.GraphResponseDto;
@@ -39,9 +40,9 @@ public class BankingController {
         return ResponseEntity.ok(dto);
     }
 
-    @PostMapping("/graph")
-    public ResponseEntity<List<GraphResponseDto>> getGraph(@RequestBody GraphFilterDto filter){
-        return ResponseEntity.ok(transakciaService.getGraph(filter));
+    @GetMapping("/graph")
+    public ResponseEntity<List<AllGraphResponseDto>> getGraph(){
+        return ResponseEntity.ok(transakciaService.getGraph());
     }
 
 }
