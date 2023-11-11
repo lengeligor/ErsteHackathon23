@@ -22,6 +22,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.store.dispatch(AppActions.AppAction());
     this.store.dispatch(AppActions.GetCurrentDateStart());
+    this.store.dispatch(AppActions.GetFinancialDataStart());
     this.helloState$ = this.store.select(AppSelectors.selectAppHello)
   }
 }

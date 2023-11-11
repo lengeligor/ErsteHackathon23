@@ -12,3 +12,15 @@ export const GetCurrentDateError = createAction(
   '[App] - Get date start error',
   props<{error: any}>(),
 );
+
+export const GetFinancialDataStart = createAction('[App] - Get financial data start')
+
+export const GetFinancialDataSuccess = createAction(
+  '[App] - Get financial data success',
+  props<{payload: any}>(),
+);
+
+export const GetFinancialDataError = createAction(
+  '[App] - Get financial data error',
+  props<{error: any}>(),
+);

@@ -1,1 +1,18 @@
-<p>better-future works!</p>
+<div class="your-future">
+  <h1>Chceš vedieť viac o svojej finančnej budúcnosti?</h1>
+  <p>Naša <strong>AI</strong> ti k tomu pomôže!</p>
+</div>
+<div class="better-future-container">
+    <div class="side-suggestions-container">
+      <div class="savings-container my-card"></div>
+      <div class="invests-container my-card"></div>
+      <div class="ai-suggestion-container my-card"></div>
+    </div>
+    <div class="graph-container my-card">
+      <h2>Tvoja budúcnosť </h2>
+      <p>Zvoľ si možnosť a pozri ako sa bude tvoja finančná situácia vyvíjať najbližších 6 mesiacov.</p>
+      <div class="card">
+        <p-chart type="line" [data]="data" [options]="options"></p-chart>
+      </div>
+    </div>
+</div>

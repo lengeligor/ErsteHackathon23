@@ -18,6 +18,10 @@ export class AppService {
     return this.httpClient.get<any>(this.envUrl+'ping')
   }
 
+  getFinancialData(): Observable<any> {
+    return this.httpClient.get<any>(this.envUrl+'graph')
+  }
+
 
   private static handleError(error: any): Promise<AppService> {
     return Promise.reject(error);
