@@ -40,6 +40,10 @@ export const selectFinancialData = createSelector(
   selectAppState,
   state => state.financialData
 )
+export const selectFinancialDataLoading = createSelector(
+  selectAppState,
+  state => state.financialDataLoading
+)
 
 export const AppReducer = createReducer(
   initState,
