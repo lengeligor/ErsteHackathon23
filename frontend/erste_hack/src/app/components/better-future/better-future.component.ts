@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import * as fromState from "../../store/reducers";
 import * as AppSelectors from "../../store/reducers/app.reducer";
+import {Observable} from "rxjs";
 
 interface Graph {
   mesiac: string;
@@ -24,14 +25,15 @@ export class BetterFutureComponent implements OnInit{
 
   data: any;
   options: any;
-
-
+  graphLoading$  = new Observable<boolean>();
 
   constructor(private store: Store<fromState.State>) {
   }
 
   financialData: any[] = [];
   ngOnInit(): void {
+    this.graphLoading$ = this.store.select(AppSelectors.selectFinancialDataLoading)
+
     this.selectFinancialData();
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
@@ -75,7 +77,6 @@ export class BetterFutureComponent implements OnInit{
 
   selectFinancialData(): void {
     this.store.select(AppSelectors.selectFinancialData).subscribe(data => {
-      console.log(data)
       this.financialData=data;
       this.data = {
         labels: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],

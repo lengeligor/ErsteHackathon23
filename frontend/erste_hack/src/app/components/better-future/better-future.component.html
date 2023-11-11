@@ -4,14 +4,31 @@
 </div>
 <div class="better-future-container">
     <div class="side-suggestions-container">
-      <div class="savings-container my-card"></div>
-      <div class="invests-container my-card"></div>
-      <div class="ai-suggestion-container my-card"></div>
+      <div class="savings-container my-card">
+        <h2>Sporenie</h2>
+        <p>Začni <strong>sporiť</strong> a pozeraj ako sa ti bude meniť finančná situácia.</p>
+        <p>Cieľová suma: <strong>1000 €</strong></p>
+        <button class="button-bu">Chcem sporiť!</button>
+      </div>
+      <div class="invests-container my-card">
+        <h2>Investovanie</h2>
+        <p>Euro k euru, spoločne k <strong>úspechu!</strong></p>
+        <p>Začnime zľahka: <strong>20€ mesačne?</strong></p>
+        <button class="button-bu">Chcem investovať!</button>
+        <p></p>
+      </div>
+      <div class="ai-suggestion-container my-card">
+        <h2>Užitočná rada ušitá pomocou AI priamo pre teba!</h2>
+        <i *ngIf="graphLoading$ | async"  class="pi pi-spin pi-spinner loading" style="font-size: 3rem"></i>
+        <p *ngIf="!(graphLoading$ | async)">" <i>Všimol som si, že posledné mesiace pravidelne míňaš na viacero streamovacích platform, zamysli sa, či naozaj využívaš všetky a stoja ti za tie peniaze. Vieš z nich vyťažiť viac! </i>"</p>
+      </div>
     </div>
     <div class="graph-container my-card">
+      <div class="border-top"></div>
       <h2>Tvoja budúcnosť </h2>
       <p>Zvoľ si možnosť a pozri ako sa bude tvoja finančná situácia vyvíjať najbližších 6 mesiacov.</p>
-      <div class="card">
+      <i *ngIf="graphLoading$ | async"  class="pi pi-spin pi-spinner loading" style="font-size: 4rem"></i>
+      <div *ngIf="!(graphLoading$ | async)" class="card">
         <p-chart type="line" [data]="data" [options]="options"></p-chart>
       </div>
     </div>

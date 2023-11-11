@@ -8,15 +8,23 @@
 .your-future {
   text-align: center;
   margin-top: 50px;
+  color: #333333;
+  font-family: 'Arial', sans-serif;
+  animation: show 1.5s;
 
-  font-family: 'Inter', sans-serif;
 
   h1 {
     margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 40px;
   }
 
   p {
     font-size: 20px;
+
+    strong {
+      font-size: 25px;
+    }
   }
 }
 
@@ -30,6 +38,7 @@
   justify-content: space-between;
   flex-direction: row;
   padding: 10px 5%;
+  animation:  show 1.5s;
 
   .side-suggestions-container {
     height: 100%;
@@ -39,36 +48,119 @@
     flex-direction: column;
     justify-content: space-around;
 
+    h2 {
+      font-weight: 600;
+    }
+
+    p {
+      font-weight: 350;
+      margin-top: 7px;
+    }
+
+    .button-bu {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: block;
+      font-weight: bold;
+    }
+
     .savings-container {
       width: 100%;
       height: 140px;
+      position: relative;
+      overflow: hidden;
+      padding: 2%;
+      animation: pop-in 1.3s ;
     }
 
     .invests-container {
       width: 100%;
       height: 140px;
+      position: relative;
+      padding: 1%;
+      overflow: hidden;
+      animation: pop-in 1.7s ;
+
+      .button-bu {
+        background-color: #2266a7;
+      }
     }
 
     .ai-suggestion-container {
       width: 100%;
       min-height: 300px;
+      padding: 2%;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: pop-in 2.1s ;
+
+      .loading {
+        margin-top: 50px;
+      }
+
+      p {
+        margin-top: 50px;
+        width: 70%;
+      }
     }
   }
 
   .graph-container {
+    position: relative;
     height: 100%;
+    min-height: 625px;
     width: 68%;
     padding: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    .border-top {
+      width: 100%;
+      height: 5px;
+      background-color: #0065ad;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+    }
 
     h2 {
       margin-bottom: 10px;
+      text-transform: uppercase ;
     }
 
     p {
       margin-left: 10px;
       margin-bottom: 30px;
     }
+
+    .card {
+      width: 100%
+    }
   }
+}
 
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
 
+@keyframes show {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
