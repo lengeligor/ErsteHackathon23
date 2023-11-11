@@ -1,3 +1,3 @@
 export const environmentDevelop = {
-  apiURL: 'http://localhost:8083/erste/api/',
+  apiURL: 'http://127.0.0.1:5000/api/',
 }
