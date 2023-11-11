@@ -47,7 +47,73 @@
       }
     }
 
+
+
     .personal-account {
+      .save-button {
+        margin-top: 5%;
+        background-color: #0069a9;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        display: block;
+        width: 70%;
+        margin-left: 15%;
+        border-radius: 5px;
+      }
+
+      .better-future-border {
+        width: 100%;
+        height: 5px;
+        background-color: green;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+      }
+
+      .boxu {
+        margin-top: 20px;
+        display: flex;
+      }
+      i{margin: 15px;
+        margin-top: 25px;
+      }
+
+      .text{
+        width: 60%;
+        margin: 10px;
+
+          h4{
+            color: gray;
+            font-weight: normal;
+          }
+
+        .suma{
+          color: green;
+          font-weight: normal;
+        }
+      }
+
+
+      .box {
+        width: 100%;
+
+      }
+
+      .boxd {
+        margin-top: 20px;
+        display: flex;
+        background-image: url('../../../assets/ss.png');
+        background-size: contain; /* Tímto se obrázek pokusí pokrýt celou oblast bez ztráty poměru stran */
+        background-position: center; /* Centruje obrázek na pozadí */
+        background-repeat: no-repeat;
+        height:150px;
+      }
+
+
 
     }
 
@@ -101,7 +167,86 @@
       }
     }
 
-    .savings,
+  .card_card{
+
+    .h3{
+      font-weight: bold;
+    }
+
+    .h2{
+      font-weight: initial;
+      font-size: 16px;
+    }
+
+    .better-future-border {
+      width: 100%;
+      height: 5px;
+      background-color: green;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+    }
+
+    h2{
+      margin: 20px;
+    }
+
+    .transaction-item {
+      border-left: 2px solid green;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      background: #f8f8f8;
+    }
+
+    .transaction-date {
+      font-weight: bold;
+      background: #f8f8f8;
+
+    }
+
+    .transaction-details {
+      flex-grow: 1;
+      padding-left: 10px;
+      background: #f8f8f8;
+    }
+
+    .transaction-amount_good {
+      background: #f8f8f8;
+      font-weight: bold;
+      color: green; /* Červená pro výdaje, zelená pro příjmy */
+    }
+
+    .transaction-amount_bad {
+      background: #f8f8f8;
+      font-weight: bold;
+      color: red; /* Červená pro výdaje, zelená pro příjmy */
+    }
+
+    .nadpis{
+      display: flex;
+    }
+
+    h4{
+      color: gray;
+      font-weight: normal;
+      margin: 25px;
+      margin-left: 60%;
+      margin-right: 0;
+      cursor: pointer;
+    }
+
+
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .savings,
     .hypo,
     .credit,
     .stocks{
@@ -137,7 +282,7 @@
       }
 
       .progress {
-        background-color: #28a745;
+        background-color: #abcce5;
         height: 100%;
         border-radius: 5px;
         transition: width 0.4s ease;
@@ -160,7 +305,7 @@
       }
 
       .save-button {
-        background-color: #28a745;
+        background-color: #0065ad;
         color: white;
         border: none;
         padding: 10px 20px;
