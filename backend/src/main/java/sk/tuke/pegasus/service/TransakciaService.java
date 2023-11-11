@@ -57,8 +57,8 @@ public class TransakciaService {
         GraphResponseDto s = new GraphResponseDto();
 
         for(int i = 0; i<7;i++){
-            s.setMesiac(arr[0]);
-            s.setStavUctu(filter[0]);
+            s.setMesiac(arr[i]);
+            s.setStavUctu(filter[i]);
             graphs.add(s);
         }
 
