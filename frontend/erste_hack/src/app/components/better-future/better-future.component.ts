@@ -5,7 +5,7 @@ import * as AppSelectors from "../../store/reducers/app.reducer";
 
 interface Graph {
   mesiac: string;
-  stavUctu: number;
+  stav_uctu: number;
 }
 
 interface GraphData {
@@ -90,7 +90,7 @@ export class BetterFutureComponent implements OnInit{
     return jsonData.map(data => {
       return {
         label: data.graphType,
-        data: data.graphs.map(graph => graph.stavUctu),
+        data: data.graphs.map(graph => graph.stav_uctu),
         fill: false,
         borderColor: this.getBorderColor(data.graphType), // You need to define this function
         tension: 0.4
