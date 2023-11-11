@@ -28,4 +28,20 @@ export class AppEffects {
     ),
   );
 
+  GetFinancialData$: Observable<Action> = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AppActions.GetFinancialDataStart),
+      mergeMap(
+        () => this.appService.getFinancialData()
+          .pipe(
+            map(data => {
+              return AppActions.GetFinancialDataSuccess({payload: data});
+            }),
+            catchError(error => of(AppActions.GetFinancialDataError(error)),
+            ),
+          ),
+      ),
+    ),
+  );
+
 }
