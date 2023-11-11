@@ -54,12 +54,9 @@ public class TransakciaService {
     public List<GraphResponseDto> getGraphForFill(double [] filter) {
         List<GraphResponseDto> graphs = new ArrayList<>();
 
-        GraphResponseDto s = new GraphResponseDto();
 
-        for(int i = 0; i<7;i++){
-            s.setMesiac(arr[i]);
-            s.setStavUctu(filter[i]);
-            graphs.add(s);
+        for(int i = 0; i<6;i++){
+            graphs.add(new GraphResponseDto(arr[i],filter[i]));
         }
 
         return graphs;
